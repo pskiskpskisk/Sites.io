@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Star YouTube Downloader — Windows desktop app</title>
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #1a2a3a, #0b0f15);
+      background-attachment: fixed;
+      color: #eef2fb;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* smooth container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      width: 100%;
+    }
+
+    /* TYPOGRAPHY */
+    h1 {
+      font-size: clamp(2.8rem, 10vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff, #c0d4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      color: #f0f4ff;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #b4c6f0;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      color: #cddbf7;
+      opacity: 0.9;
+    }
+
+    /* BUTTON — big & rounded */
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(145deg, #2a6df4, #1a4fc3);
+      color: white;
+      font-weight: 600;
+      font-size: 1.35rem;
+      padding: 1.1rem 2.8rem;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 12px 30px -8px rgba(0, 30, 100, 0.6), 0 4px 0 #0e2a5e inset, 0 -2px 0 rgba(255,255,255,0.1) inset;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.25s ease;
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.3px;
+      margin-bottom: 1rem;
+    }
+
+    .btn-download:hover {
+      transform: scale(1.02) translateY(-2px);
+      background: linear-gradient(145deg, #3f82ff, #235ed8);
+      box-shadow: 0 20px 35px -6px #0f2f6e, 0 4px 0 #0b1f44 inset, 0 -2px 0 rgba(255,255,255,0.15) inset;
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .btn-download:active {
+      transform: scale(0.99) translateY(2px);
+      box-shadow: 0 8px 20px -5px #0a1e44, 0 2px 0 #0b1f44 inset;
+    }
+
+    .download-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .github-note {
+      font-size: 0.9rem;
+      color: #9aafd9;
+      margin-top: 0.5rem;
+    }
+
+    .github-note a {
+      color: #b8ceff;
+      text-decoration: none;
+      border-bottom: 1px dotted #5f7ec0;
+    }
+
+    /* HERO section */
+    .hero {
+      text-align: center;
+      padding: 1rem 0 2rem 0;
+    }
+
+    /* FEATURES grid (3 cards) */
+    .features-section {
+      margin: 4rem 0 3.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(20, 30, 45, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(110, 150, 240, 0.15);
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      background: rgba(30, 45, 70, 0.7);
+      border-color: rgba(80, 150, 255, 0.3);
+      box-shadow: 0 25px 35px -12px #03070e;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #e3ebff;
+    }
+
+    .feature-card p {
+      color: #b9c8ef;
+      font-size: 1.05rem;
+    }
+
+    /* SCREENSHOT PLACEHOLDER */
+    .screenshot-section {
+      margin: 3rem 0 3rem;
+      text-align: center;
+    }
+
+    .screenshot-placeholder {
+      background: rgba(8, 18, 30, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid #2f4670;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 40px -10px #03080f, inset 0 0 0 1px rgba(255,255,255,0.02);
+      max-width: 900px;
+      margin: 2rem auto 0;
+      transition: box-shadow 0.3s;
+    }
+
+    .screenshot-placeholder:hover {
+      box-shadow: 0 24px 48px -12px #00000080, inset 0 0 0 1px #3e62a3;
+    }
+
+    .mock-window {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .window-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .window-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #2c3e5c;
+      box-shadow: inset 0 0 2px #00000055;
+    }
+
+    .window-dot:nth-child(1) { background: #ff5f56; }
+    .window-dot:nth-child(2) { background: #ffbd2e; }
+    .window-dot:nth-child(3) { background: #27c93f; }
+
+    .mock-content {
+      background: #0f1a28;
+      border-radius: 18px;
+      padding: 2rem 1.5rem;
+      border: 1px solid #253c5c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .mock-video-row {
+      width: 100%;
+      height: 12px;
+      background: #1f314a;
+      border-radius: 30px;
+    }
+
+    .mock-thumbnail {
+      width: 100%;
+      max-width: 500px;
+      height: 160px;
+      background: linear-gradient(145deg, #1e3450, #0f1a2b);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a3bbec;
+      font-size: 1.3rem;
+      border: 1px solid #2c4b77;
+    }
+
+    .placeholder-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 500;
+      color: #aac2ff;
+      margin-top: 0.5rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 3rem;
+      padding: 2rem 0 1rem;
+      text-align: center;
+      border-top: 1px solid rgba(90, 140, 220, 0.2);
+      color: #9aafd0;
+      font-size: 1rem;
+    }
+
+    .footer strong {
+      color: #d3e0ff;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem 1.2rem;
+      }
+      h1 {
+        font-size: 2.8rem;
+      }
+      .subtitle {
+        font-size: 1.3rem;
+      }
+      .description {
+        font-size: 1.1rem;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .btn-download {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 100%;
+        max-width: 380px;
+      }
+      .hero {
+        padding-top: 0;
+      }
+      .screenshot-placeholder {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .feature-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* additional utility */
+    .text-center {
+      text-align: center;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .badge-win {
+      display: inline-block;
+      background: #0078d4;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 10px;
+      vertical-align: middle;
+      color: white;
+    }
+
+    a {
+      transition: opacity 0.2s;
+    }
+    a:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h1>Star YouTube Downloader</h1>
+      <div class="subtitle">
+        Download videos, playlists & music 
+        <span class="badge-win">Windows 10/11</span>
+      </div>
+      <p class="description">
+        Fast, open‑source desktop app. Save your favorite YouTube content in HD, 
+        MP3, or 4K — with smart playlist handling and zero bloat.
+      </p>
+
+      <!-- BIG DOWNLOAD BUTTON (links directly to latest .exe) -->
+      <div class="flex-center">
+        <a href="https://github.com/DailyTechSolutions/StarYouTubeDownloader/releases/latest/download/StarYouTubeDownloader.exe" 
+           class="btn-download" 
+           title="Download latest Windows installer">
+          <span class="download-icon">⬇️</span> 
+          Download for Windows
+          <span style="margin-left: 4px;">⚡</span>
+        </a>
+      </div>
+      <div class="github-note">
+        <span>✨ Latest release from </span>
+        <a href="https://github.com/DailyTechSolutions/StarYouTubeDownloader" target="_blank" rel="noopener">
+          GitHub/DailyTechSolutions
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURES (3 cards) -->
+    <section class="features-section">
+      <h2 class="text-center">Everything you need</h2>
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3>Lightning Fast</h3>
+          <p>Multi‑threaded acceleration & smart buffering. Download 4K videos in seconds, even on slower connections.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <span class="feature-icon">🎛️</span>
+          <h3>Format Freedom</h3>
+          <p>MP4 or extract audio as MP3/M4A. Choose quality up to 8K 60 FPS.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <span class="feature-icon">📂</span>
+          <h3>Playlist & Channel</h3>
+          <p>Grab entire playlists or watch‑later lists.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOT PLACEHOLDER (modern mockup) -->
+    <section class="screenshot-section">
+      <h2 class="text-center">Clean & intuitive</h2>
+      <div class="screenshot-placeholder">
+        <div class="mock-window">
+          <div class="window-bar">
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span style="flex:1; text-align: center; color: #a1b7e0; font-size: 0.9rem; letter-spacing: 0.5px;">Star YouTube Downloader</span>
+          </div>
+          <img src=".\Example.png"></img>
+        </div>
+        <div class="placeholder-label">App screenshot — dark mode </div>
+      </div>
+    </section>
+
+    <!-- FOOTER with DailyTech Solutions -->
+    <footer class="footer">
+      <div>© 2026 <strong><span style="color: white;font-size:20px">D</span>ailyTech <span style="color: white;font-size:20px">S</span>olutions</strong> — Star YouTube Downloader</div>
+      <div style="margin-top: 12px; font-size: 0.9rem; opacity: 0.7;">
+        <span>Open source · Windows · </span>
+        <a href="https://github.com/DailyTechSolutions/StarYouTubeDownloader" style="color: #b8ceff; text-decoration: none;">GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- subtle hover effect and clean design — no external frameworks -->
+</body>
+</html>
