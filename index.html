@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="google-site-verification" content="xYcSvSpmBvTNDd3nqLG79vuQdsTB942N6oFKKqWZVag" />
-  <title>Star YouTube Downloader — Windows desktop app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Star YouTube Downloader | Best yt-dlp GUI for Windows (4K, MP3)</title>
+  <meta name="description" content="Star YouTube Downloader is the ultimate yt-dlp GUI for Windows. Download videos, playlists, audio separately with robust merging. Fast, free, open-source video downloader for Windows 10/11.">
+  <meta name="keywords" content="youtube downloader, yt-dlp gui, video downloader for windows, youtube video downloader, youtube to mp3, 4k video downloader, open source downloader">
+  <meta name="author" content="DailyTech Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Star YouTube Downloader | yt-dlp GUI for Windows">
+  <meta property="og:description" content="Download video & audio separately, then merge for perfect quality. The most robust YouTube downloader for Windows.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/pskiskpskisk/Star-Youtube-Downloader/main/.github/screenshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://starytd.netlify.app/">
   <style>
     /* Reset & base */
     * {
@@ -356,48 +366,117 @@
       font-size: 0.9rem;
       margin-left: 10px;
     }
+    .seo-content {
+      background: rgba(12, 22, 35, 0.5);
+      border-radius: 28px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid #2a6df4;
+    }
+    .seo-content p {
+      margin-bottom: 1rem;
+      color: #cddcf5;
+    }
+    .trust-badge {
+      display: inline-flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .trust-item {
+      background: rgba(0,0,0,0.3);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(2px);
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- HERO -->
-    <section class="hero">
-      <h1>Star YouTube Downloader</h1>
-      <div class="subtitle">
-        Download videos, playlists & music 
-        <span class="badge-win">Windows 10/11</span>
-      </div>
-      <p class="description">
-        Fast, open‑source desktop app. Save your favorite YouTube content in HD, 
-        MP3, or 4K — with smart playlist handling and zero bloat.
-      </p>
 
-      <div class="flex-center">
-        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader/releases/download/v1.1.0/StarYouTubeDownloaderSetup.exe" 
-           class="btn-download">
-          <span class="download-icon">⬇️</span> 
-          Download for Windows
-          <span>⚡</span>
-        </a>
-      </div>
-      <div class="github-note">
-        <span>✨ Latest release from </span>
-        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener">
-          GitHub/DailyTechSolutions
-        </a>
-      </div>
-      
-      <div class="repo-star-line flex-center">
-        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener" class="star-repo-link">
-          <span style="font-size: 1.4rem;">⭐</span> Star this repo on GitHub 
-          <span style="font-size: 1.2rem;">✨</span>
-        </a>
-      </div>
+	<header role="banner">
+
+  <!-- NAVIGATION -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+    
+    <div style="font-weight:600; color:#cddbf7;">
+      StarYTD
+    </div>
+
+    <div style="display:flex; gap:20px;">
+      <a href="#features" style="color:#b8ceff; text-decoration:none;">Features</a>
+      <a href="#download" style="color:#b8ceff; text-decoration:none;">Download</a>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+      <section class="hero">
+        <h1>StarYTD - Free YouTube Video Downloader for Windows</h1>
+        <div class="subtitle">
+          Best yt-dlp GUI for Windows — Download video & audio separately
+          <span class="badge-win">Windows 10/11</span>
+        </div>
+        <p class="description">
+          Fast, open‑source desktop app. Save your favorite YouTube content in HD, 
+          MP3, or 4K — with smart playlist handling and zero bloat.
+        </p>
+
+        <div id="download" class="flex-center">
+          <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader/releases/download/v1.1.0/StarYouTubeDownloaderSetup.exe" 
+             class="btn-download" aria-label="Download Star YouTube Downloader for Windows">
+            <span class="download-icon" aria-hidden="true">⬇️</span> 
+            Download for Windows
+            <span aria-hidden="true">⚡</span>
+          </a>
+        </div>
+        <div class="github-note">
+          <span>✨ Latest release from </span>
+          <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener noreferrer">
+            GitHub/DailyTechSolutions
+          </a>
+        </div>
+        
+        <div class="repo-star-line flex-center">
+          <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener noreferrer" class="star-repo-link" aria-label="Star this repository on GitHub">
+            <span style="font-size: 1.4rem;" aria-hidden="true">⭐</span> Star this repo on GitHub 
+            <span style="font-size: 1.2rem;" aria-hidden="true">✨</span>
+          </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="trust-badge">
+          <span class="trust-item">🚀 100% Free</span>
+          <span class="trust-item">🔓 Open Source (yt-dlp core)</span>
+          <span class="trust-item">📥 No ads · No spyware</span>
+          <span class="trust-item">⚡ Up to 8K downloads</span>
+        </div>
+      </section>
+    </header>
+
+    <!-- SEO-optimized natural content block -->
+    <section class="seo-content" aria-label="About Star YouTube Downloader">
+      <p><strong>Star YouTube Downloader</strong> is the most robust <strong>youtube downloader</strong> for Windows, built on top of <strong>yt-dlp</strong> with a clean GUI. Unlike basic online tools, this <strong>video downloader for windows</strong> gives you full control: download <strong>video separately</strong> (VP9/H.264 up to 8K) and <strong>audio separately</strong> (Opus/AAC/MP3), then merge them losslessly using FFmpeg. This method guarantees perfect audio-video sync and maximum quality — no re-encoding, no quality loss.</p>
+      <p>Whether you need a reliable <strong>yt-dlp gui</strong> to save entire playlists, extract audio as MP3, or grab 4K HDR videos, Star YouTube Downloader delivers. It's completely open source, respects your privacy, and works offline after installation. Say goodbye to shady browser extensions — get the professional <strong>video downloader for windows</strong> that power users trust.</p>
     </section>
 
     <!-- 🔥 ROBUST: SEPARATE VIDEO + AUDIO DOWNLOAD → THEN MERGE (as requested) -->
-    <section class="robust-section">
-      <h2 class="text-center" style="margin-bottom: 0.5rem;">
+    <section id="features" class="robust-section" aria-labelledby="robust-heading">
+      <h2 id="robust-heading" class="text-center" style="margin-bottom: 0.5rem;">
         <span style="background: #1e4d8c; padding: 0.2rem 1.2rem; border-radius: 40px; font-size: 1rem;">🔷 MOST ROBUST METHOD</span>
       </h2>
       <h3 class="text-center" style="font-size: 2rem; margin-bottom: 1rem;">Download Video & Audio <span style="color: #7aaeff;">Separately</span> — Then Merge</h3>
@@ -408,27 +487,27 @@
       <div class="workflow-container">
         <div class="workflow-step">
           <div class="step-badge">1</div>
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</div>
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" aria-hidden="true">🎬</div>
           <h4 style="color: #aac8ff;">Download Video</h4>
           <p style="opacity: 0.9; font-size: 0.95rem;">Best video stream<br>(VP9 / H.264 · up to 8K)</p>
           <span class="tag-pill">video-only · no audio</span>
         </div>
         
-        <div class="arrow-symbol">➕</div>
+        <div class="arrow-symbol" aria-hidden="true">➕</div>
         
         <div class="workflow-step">
           <div class="step-badge">2</div>
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎵</div>
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" aria-hidden="true">🎵</div>
           <h4 style="color: #aac8ff;">Download Audio</h4>
           <p style="opacity: 0.9; font-size: 0.95rem;">Best audio stream<br>(Opus / AAC · 128-256kbps)</p>
           <span class="tag-pill">audio-only · pristine</span>
         </div>
         
-        <div class="arrow-symbol">⚡</div>
+        <div class="arrow-symbol" aria-hidden="true">⚡</div>
         
         <div class="workflow-step">
           <div class="step-badge" style="background: #2a6a3a; border-color: #6fcf97;">3</div>
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔗</div>
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" aria-hidden="true">🔗</div>
           <h4 style="color: #b8ffb0;">Merge Locally</h4>
           <p style="opacity: 0.9; font-size: 0.95rem;">FFmpeg-powered<br>perfect sync · zero re-encode</p>
           <span class="tag-pill" style="background: #2e7d5e;">final MP4/MKV</span>
@@ -438,7 +517,7 @@
       <!-- Visual representation of separate streams merging -->
       <div class="download-panel-dual">
         <div class="panel-item">
-          <div style="font-size: 2rem;">📹</div>
+          <div style="font-size: 2rem;" aria-hidden="true">📹</div>
           <h4>Video Stream</h4>
           <div style="display: flex; gap: 8px; justify-content: center; margin: 10px 0;">
             <span class="tag-pill">4K VP9</span>
@@ -447,7 +526,7 @@
           <p style="font-size: 0.9rem;">downloaded separately · highest quality</p>
         </div>
         <div class="panel-item">
-          <div style="font-size: 2rem;">🎧</div>
+          <div style="font-size: 2rem;" aria-hidden="true">🎧</div>
           <h4>Audio Stream</h4>
           <div style="display: flex; gap: 8px; justify-content: center; margin: 10px 0;">
             <span class="tag-pill">Opus 160k</span>
@@ -459,9 +538,9 @@
 
       <div class="text-center">
         <div class="merge-result">
-          <span style="font-size: 1.8rem; margin-right: 10px;">✨</span>
+          <span style="font-size: 1.8rem; margin-right: 10px;" aria-hidden="true">✨</span>
           <strong style="font-size: 1.3rem;">Video + Audio merged → Perfect output</strong>
-          <span style="font-size: 1.8rem; margin-left: 10px;">✨</span>
+          <span style="font-size: 1.8rem; margin-left: 10px;" aria-hidden="true">✨</span>
         </div>
         <p style="margin-top: 1.2rem; color: #aac2ff;">
           ⚡ <em>"Download audio separately and video separately — then merge. More rigid, more robust, zero compromise."</em>
@@ -470,26 +549,26 @@
     </section>
 
     <!-- FEATURES (4 cards) -->
-    <section class="features-section">
-      <h2 class="text-center">Everything you need</h2>
+    <section class="features-section" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="text-center">Everything you need in a YouTube Downloader</h2>
       <div class="features-grid">
         <div class="feature-card">
-          <span class="feature-icon">⚡</span>
+          <span class="feature-icon" aria-hidden="true">⚡</span>
           <h3>Lightning Fast</h3>
           <p>Multi‑threaded acceleration & smart buffering. Download 4K videos in seconds.</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">🎬</span>
+          <span class="feature-icon" aria-hidden="true">🎬</span>
           <h3>Video Download</h3>
           <p>Download video separately — MP4, MKV, up to 8K. Best quality stream, no audio.</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">🎵</span>
+          <span class="feature-icon" aria-hidden="true">🎵</span>
           <h3>Audio Download</h3>
           <p>Extract audio separately — MP3 / M4A / Opus. Pure audio track, then merge if needed.</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">🔗</span>
+          <span class="feature-icon" aria-hidden="true">🔗</span>
           <h3>Smart Merge</h3>
           <p>FFmpeg integration. Merge downloaded video + audio perfectly — or keep separate.</p>
         </div>
@@ -497,8 +576,8 @@
     </section>
 
     <!-- SCREENSHOT -->
-    <section class="screenshot-section">
-      <h2 class="text-center">Clean & intuitive</h2>
+    <section class="screenshot-section" aria-labelledby="screenshot-heading">
+      <h2 id="screenshot-heading" class="text-center">Clean & intuitive yt-dlp GUI</h2>
       <div class="screenshot-placeholder">
         <div class="window-bar">
           <span class="window-dot"></span>
@@ -506,20 +585,20 @@
           <span class="window-dot"></span>
           <span style="flex:1; text-align: center; color: #a1b7e0;">Star YouTube Downloader</span>
         </div>
-        <img src=".\Example.png" alt="Star YouTube Downloader interface" style="max-width: 100%; border-radius: 16px; display: block; margin: 0 auto; border: 1px solid #2e4a7a;">
+        <img src=".\Example.png" alt="Star YouTube Downloader interface showing separate video and audio download options and merge controls" style="max-width: 100%; border-radius: 16px; display: block; margin: 0 auto; border: 1px solid #2e4a7a;">
         <div class="placeholder-label" style="margin-top: 1rem;">Separate video/audio controls · robust merge engine</div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div>© 2026 <strong><span style="color: white;font-size:20px">D</span>ailyTech <span style="color: white;font-size:20px">S</span>olutions</strong> — Star YouTube Downloader</div>
+      <div>© 2026 <strong><span style="color: white;font-size:20px" aria-hidden="true">D</span>ailyTech <span style="color: white;font-size:20px" aria-hidden="true">S</span>olutions</strong> — Star YouTube Downloader</div>
       <div style="margin-top: 12px; font-size: 0.9rem;">
-        <span>Open source · Windows · </span>
-        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" style="color: #b8ceff; text-decoration: none;">GitHub</a>
+        <span>Open source · Windows · Best yt-dlp GUI · </span>
+        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" style="color: #b8ceff; text-decoration: none;" rel="noopener noreferrer">GitHub Repository</a>
       </div>
       <div style="margin-top: 20px;">
-        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: #0e1e2e; padding: 10px 24px; border-radius: 50px; text-decoration: none; color: #ffd966; border: 1px solid #4a7ec0; font-weight: 600;">
+        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: #0e1e2e; padding: 10px 24px; border-radius: 50px; text-decoration: none; color: #ffd966; border: 1px solid #4a7ec0; font-weight: 600;">
           ⭐ Star the repo — support robust downloading
         </a>
       </div>
