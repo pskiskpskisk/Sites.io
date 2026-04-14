@@ -23,7 +23,6 @@
       flex-direction: column;
     }
 
-    /* smooth container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -52,6 +51,11 @@
       color: #f0f4ff;
     }
 
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
     .subtitle {
       font-size: 1.5rem;
       font-weight: 400;
@@ -67,7 +71,7 @@
       opacity: 0.9;
     }
 
-    /* BUTTON — big & rounded */
+    /* BUTTON */
     .btn-download {
       display: inline-flex;
       align-items: center;
@@ -117,20 +121,43 @@
       border-bottom: 1px dotted #5f7ec0;
     }
 
+    /* star repo link */
+    .star-repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 215, 0, 0.08);
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      margin: 1rem 0 0.5rem;
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      color: #ffe28c;
+      text-decoration: none;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+    .star-repo-link:hover {
+      background: rgba(255, 215, 0, 0.15);
+      border-color: #ffd966;
+      color: #ffeaaf;
+      transform: scale(1.02);
+    }
+
     /* HERO section */
     .hero {
       text-align: center;
       padding: 1rem 0 2rem 0;
     }
 
-    /* FEATURES grid (3 cards) */
+    /* FEATURES grid */
     .features-section {
       margin: 4rem 0 3.5rem;
     }
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -141,7 +168,7 @@
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(110, 150, 240, 0.15);
       border-radius: 32px;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.2rem;
       transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
       box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
     }
@@ -160,7 +187,7 @@
     }
 
     .feature-card h3 {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 0.75rem;
       color: #e3ebff;
@@ -171,7 +198,91 @@
       font-size: 1.05rem;
     }
 
-    /* SCREENSHOT PLACEHOLDER */
+    /* ROBUST DOWNLOAD SECTION - separate then merge */
+    .robust-section {
+      background: linear-gradient(145deg, rgba(15, 28, 45, 0.8), rgba(8, 18, 32, 0.9));
+      backdrop-filter: blur(10px);
+      border-radius: 40px;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0;
+      border: 1px solid rgba(80, 150, 255, 0.25);
+      box-shadow: 0 20px 40px -10px #00000050;
+    }
+
+    .workflow-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .workflow-step {
+      text-align: center;
+      min-width: 180px;
+    }
+
+    .step-badge {
+      width: 60px;
+      height: 60px;
+      background: #1e3b63;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffd966;
+      border: 2px solid #3e7bc0;
+    }
+
+    .arrow-symbol {
+      font-size: 2.5rem;
+      color: #5f9eff;
+      opacity: 0.7;
+    }
+
+    .download-panel-dual {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .panel-item {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 24px;
+      padding: 1.5rem 2rem;
+      border: 1px solid rgba(100, 170, 255, 0.2);
+      min-width: 220px;
+    }
+
+    .panel-item h4 {
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+      color: #d6e5ff;
+    }
+
+    .merge-result {
+      background: linear-gradient(135deg, #1a3a5c, #0e2840);
+      border-radius: 50px;
+      padding: 1.2rem 2.5rem;
+      display: inline-block;
+      margin-top: 2rem;
+      border: 2px solid #4a9eff;
+    }
+
+    .tag-pill {
+      background: #2a5a8c;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #cde2ff;
+    }
+
+    /* SCREENSHOT */
     .screenshot-section {
       margin: 3rem 0 3rem;
       text-align: center;
@@ -180,24 +291,12 @@
     .screenshot-placeholder {
       background: rgba(8, 18, 30, 0.7);
       backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
       border: 1px solid #2f4670;
       border-radius: 28px;
       padding: 2.5rem 2rem;
-      box-shadow: 0 20px 40px -10px #03080f, inset 0 0 0 1px rgba(255,255,255,0.02);
+      box-shadow: 0 20px 40px -10px #03080f;
       max-width: 900px;
       margin: 2rem auto 0;
-      transition: box-shadow 0.3s;
-    }
-
-    .screenshot-placeholder:hover {
-      box-shadow: 0 24px 48px -12px #00000080, inset 0 0 0 1px #3e62a3;
-    }
-
-    .mock-window {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
     }
 
     .window-bar {
@@ -212,52 +311,10 @@
       height: 14px;
       border-radius: 50%;
       background: #2c3e5c;
-      box-shadow: inset 0 0 2px #00000055;
     }
-
     .window-dot:nth-child(1) { background: #ff5f56; }
     .window-dot:nth-child(2) { background: #ffbd2e; }
     .window-dot:nth-child(3) { background: #27c93f; }
-
-    .mock-content {
-      background: #0f1a28;
-      border-radius: 18px;
-      padding: 2rem 1.5rem;
-      border: 1px solid #253c5c;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .mock-video-row {
-      width: 100%;
-      height: 12px;
-      background: #1f314a;
-      border-radius: 30px;
-    }
-
-    .mock-thumbnail {
-      width: 100%;
-      max-width: 500px;
-      height: 160px;
-      background: linear-gradient(145deg, #1e3450, #0f1a2b);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #a3bbec;
-      font-size: 1.3rem;
-      border: 1px solid #2c4b77;
-    }
-
-    .placeholder-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 500;
-      color: #aac2ff;
-      margin-top: 0.5rem;
-    }
 
     /* FOOTER */
     .footer {
@@ -266,88 +323,43 @@
       text-align: center;
       border-top: 1px solid rgba(90, 140, 220, 0.2);
       color: #9aafd0;
-      font-size: 1rem;
     }
 
     .footer strong {
       color: #d3e0ff;
-      font-weight: 500;
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 1.5rem 1.2rem;
-      }
-      h1 {
-        font-size: 2.8rem;
-      }
-      .subtitle {
-        font-size: 1.3rem;
-      }
-      .description {
-        font-size: 1.1rem;
-      }
+    @media (max-width: 900px) {
       .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .btn-download {
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-        width: 100%;
-        max-width: 380px;
-      }
-      .hero {
-        padding-top: 0;
-      }
-      .screenshot-placeholder {
-        padding: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      .feature-card {
-        padding: 1.5rem;
-      }
+    @media (max-width: 768px) {
+      .container { padding: 1.5rem 1.2rem; }
+      h1 { font-size: 2.5rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .btn-download { width: 100%; max-width: 380px; }
+      .workflow-container { flex-direction: column; }
+      .arrow-symbol { transform: rotate(90deg); }
     }
 
-    /* additional utility */
-    .text-center {
-      text-align: center;
-    }
-
-    .flex-center {
-      display: flex;
-      justify-content: center;
-    }
-
+    .text-center { text-align: center; }
+    .flex-center { display: flex; justify-content: center; }
     .badge-win {
       display: inline-block;
       background: #0078d4;
       padding: 0.2rem 1rem;
       border-radius: 40px;
       font-size: 0.9rem;
-      font-weight: 500;
       margin-left: 10px;
-      vertical-align: middle;
-      color: white;
-    }
-
-    a {
-      transition: opacity 0.2s;
-    }
-    a:hover {
-      opacity: 0.9;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero">
       <h1>Star YouTube Downloader</h1>
       <div class="subtitle">
@@ -359,14 +371,12 @@
         MP3, or 4K — with smart playlist handling and zero bloat.
       </p>
 
-      <!-- BIG DOWNLOAD BUTTON (links directly to latest .exe) -->
       <div class="flex-center">
         <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader/releases/download/v1.1.0/StarYouTubeDownloaderSetup.exe" 
-           class="btn-download" 
-           title="Download latest Windows installer">
+           class="btn-download">
           <span class="download-icon">⬇️</span> 
           Download for Windows
-          <span style="margin-left: 4px;">⚡</span>
+          <span>⚡</span>
         </a>
       </div>
       <div class="github-note">
@@ -375,60 +385,144 @@
           GitHub/DailyTechSolutions
         </a>
       </div>
+      
+      <div class="repo-star-line flex-center">
+        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener" class="star-repo-link">
+          <span style="font-size: 1.4rem;">⭐</span> Star this repo on GitHub 
+          <span style="font-size: 1.2rem;">✨</span>
+        </a>
+      </div>
     </section>
 
-    <!-- FEATURES (3 cards) -->
+    <!-- 🔥 ROBUST: SEPARATE VIDEO + AUDIO DOWNLOAD → THEN MERGE (as requested) -->
+    <section class="robust-section">
+      <h2 class="text-center" style="margin-bottom: 0.5rem;">
+        <span style="background: #1e4d8c; padding: 0.2rem 1.2rem; border-radius: 40px; font-size: 1rem;">🔷 MOST ROBUST METHOD</span>
+      </h2>
+      <h3 class="text-center" style="font-size: 2rem; margin-bottom: 1rem;">Download Video & Audio <span style="color: #7aaeff;">Separately</span> — Then Merge</h3>
+      <p class="text-center" style="color: #b8ceff; max-width: 700px; margin: 0 auto 1.5rem;">
+        No quality loss · Best audio sync · YouTube's highest bitrate video + pristine audio track combined locally
+      </p>
+
+      <div class="workflow-container">
+        <div class="workflow-step">
+          <div class="step-badge">1</div>
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</div>
+          <h4 style="color: #aac8ff;">Download Video</h4>
+          <p style="opacity: 0.9; font-size: 0.95rem;">Best video stream<br>(VP9 / H.264 · up to 8K)</p>
+          <span class="tag-pill">video-only · no audio</span>
+        </div>
+        
+        <div class="arrow-symbol">➕</div>
+        
+        <div class="workflow-step">
+          <div class="step-badge">2</div>
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎵</div>
+          <h4 style="color: #aac8ff;">Download Audio</h4>
+          <p style="opacity: 0.9; font-size: 0.95rem;">Best audio stream<br>(Opus / AAC · 128-256kbps)</p>
+          <span class="tag-pill">audio-only · pristine</span>
+        </div>
+        
+        <div class="arrow-symbol">⚡</div>
+        
+        <div class="workflow-step">
+          <div class="step-badge" style="background: #2a6a3a; border-color: #6fcf97;">3</div>
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔗</div>
+          <h4 style="color: #b8ffb0;">Merge Locally</h4>
+          <p style="opacity: 0.9; font-size: 0.95rem;">FFmpeg-powered<br>perfect sync · zero re-encode</p>
+          <span class="tag-pill" style="background: #2e7d5e;">final MP4/MKV</span>
+        </div>
+      </div>
+
+      <!-- Visual representation of separate streams merging -->
+      <div class="download-panel-dual">
+        <div class="panel-item">
+          <div style="font-size: 2rem;">📹</div>
+          <h4>Video Stream</h4>
+          <div style="display: flex; gap: 8px; justify-content: center; margin: 10px 0;">
+            <span class="tag-pill">4K VP9</span>
+            <span class="tag-pill">1080p H.264</span>
+          </div>
+          <p style="font-size: 0.9rem;">downloaded separately · highest quality</p>
+        </div>
+        <div class="panel-item">
+          <div style="font-size: 2rem;">🎧</div>
+          <h4>Audio Stream</h4>
+          <div style="display: flex; gap: 8px; justify-content: center; margin: 10px 0;">
+            <span class="tag-pill">Opus 160k</span>
+            <span class="tag-pill">M4A AAC</span>
+          </div>
+          <p style="font-size: 0.9rem;">extracted independently · original bitrate</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <div class="merge-result">
+          <span style="font-size: 1.8rem; margin-right: 10px;">✨</span>
+          <strong style="font-size: 1.3rem;">Video + Audio merged → Perfect output</strong>
+          <span style="font-size: 1.8rem; margin-left: 10px;">✨</span>
+        </div>
+        <p style="margin-top: 1.2rem; color: #aac2ff;">
+          ⚡ <em>"Download audio separately and video separately — then merge. More rigid, more robust, zero compromise."</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURES (4 cards) -->
     <section class="features-section">
       <h2 class="text-center">Everything you need</h2>
       <div class="features-grid">
-        <!-- Card 1 -->
         <div class="feature-card">
           <span class="feature-icon">⚡</span>
           <h3>Lightning Fast</h3>
-          <p>Multi‑threaded acceleration & smart buffering. Download 4K videos in seconds, even on slower connections.</p>
+          <p>Multi‑threaded acceleration & smart buffering. Download 4K videos in seconds.</p>
         </div>
-        <!-- Card 2 -->
         <div class="feature-card">
-          <span class="feature-icon">🎛️</span>
-          <h3>Format Freedom</h3>
-          <p>MP4 or extract audio as MP3/M4A. Choose quality up to 8K 60 FPS.</p>
+          <span class="feature-icon">🎬</span>
+          <h3>Video Download</h3>
+          <p>Download video separately — MP4, MKV, up to 8K. Best quality stream, no audio.</p>
         </div>
-        <!-- Card 3 -->
         <div class="feature-card">
-          <span class="feature-icon">📂</span>
-          <h3>Playlist & Channel</h3>
-          <p>Grab entire playlists or watch‑later lists.</p>
+          <span class="feature-icon">🎵</span>
+          <h3>Audio Download</h3>
+          <p>Extract audio separately — MP3 / M4A / Opus. Pure audio track, then merge if needed.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔗</span>
+          <h3>Smart Merge</h3>
+          <p>FFmpeg integration. Merge downloaded video + audio perfectly — or keep separate.</p>
         </div>
       </div>
     </section>
 
-    <!-- SCREENSHOT PLACEHOLDER (modern mockup) -->
+    <!-- SCREENSHOT -->
     <section class="screenshot-section">
       <h2 class="text-center">Clean & intuitive</h2>
       <div class="screenshot-placeholder">
-        <div class="mock-window">
-          <div class="window-bar">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span style="flex:1; text-align: center; color: #a1b7e0; font-size: 0.9rem; letter-spacing: 0.5px;">Star YouTube Downloader</span>
-          </div>
-          <img src=".\Example.png"></img>
+        <div class="window-bar">
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span style="flex:1; text-align: center; color: #a1b7e0;">Star YouTube Downloader</span>
         </div>
-        <div class="placeholder-label">App screenshot — dark mode </div>
+        <img src=".\Example.png" alt="Star YouTube Downloader interface" style="max-width: 100%; border-radius: 16px; display: block; margin: 0 auto; border: 1px solid #2e4a7a;">
+        <div class="placeholder-label" style="margin-top: 1rem;">Separate video/audio controls · robust merge engine</div>
       </div>
     </section>
 
-    <!-- FOOTER with DailyTech Solutions -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div>© 2026 <strong><span style="color: white;font-size:20px">D</span>ailyTech <span style="color: white;font-size:20px">S</span>olutions</strong> — Star YouTube Downloader</div>
-      <div style="margin-top: 12px; font-size: 0.9rem; opacity: 0.7;">
+      <div style="margin-top: 12px; font-size: 0.9rem;">
         <span>Open source · Windows · </span>
         <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" style="color: #b8ceff; text-decoration: none;">GitHub</a>
       </div>
+      <div style="margin-top: 20px;">
+        <a href="https://github.com/pskiskpskisk/Star-Youtube-Downloader" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: #0e1e2e; padding: 10px 24px; border-radius: 50px; text-decoration: none; color: #ffd966; border: 1px solid #4a7ec0; font-weight: 600;">
+          ⭐ Star the repo — support robust downloading
+        </a>
+      </div>
     </footer>
   </div>
-
-  <!-- subtle hover effect and clean design — no external frameworks -->
 </body>
 </html>
